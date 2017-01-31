@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=ScARA Server
+Exec=node /home/pi/scara_server/server.js
+Terminal=true
+Icon=/home/pi/scara_server/static/scara_icon.png

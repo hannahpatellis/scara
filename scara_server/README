@@ -1,0 +1,62 @@
+Sapphic Citadel Automated Residency Application (ScARA) Project
+
+*~~*
+
+ScARA is in early early development and does not work 100% yet
+
+*~~*
+
+ScARA Server is written primarily in Node.js and handles the communications between external smart home devices and the ScARA Panels. It keeps all the Panels up to date using websockets.
+
+	Panel <--->
+	Panel <---> Server <--> Smart devices
+	Panel <--->
+
+Recommended equipment for server:
+	•	Raspberry Pi, any model
+	•	A USB wi-fi adapter if it's not a Raspberry Pi 3, or unless you're going to use ethernet
+	•	16GB microSD card
+	•	Power cord/supply for the Pi
+
+Install and setup:
+	•	Copy the included image file onto a microSD card
+	•	Boot
+	•	Connect to you network
+	•	Assign static IP address via your router
+	•	Change hostname
+	⁃		sudo nano /etc/hosts
+	⁃		sudo nano /etc/hostname
+	•	Change password
+	⁃		passwd
+	•	Make UI configurations
+	⁃	Remove task bar icons that aren't needed
+	⁃		Set the task bar to under windows
+	⁃		Set wallpaper (if so desired)
+	⁃		Remove trash can icon
+	•	Install required packages
+	⁃		curl -sL https://deb.nodesource.com/setup_7.x | sudo -E bash -
+	⁃		sudo apt-get install -y nodejs
+	⁃		sudo apt-get install -y build-essential
+	•	SFTP to your Pi and upload the scara_server folder to the home directory (so that you have /home/pi/scara_server)
+	•	Place ScARA Panel.desktop in the correct places for Application menu
+	⁃		sudo cp "/home/pi/scara_server/ScARA Server.desktop" "/usr/share/applications/ScARA Server.desktop"
+	•	Open the scara_server directory and install Node.js packages
+	⁃		cd /home/pi/scara_server
+	⁃		npm install websocket
+	⁃		npm install request
+	•	Place an icon to ScARA Server in the task bar
+	•	Run ScARA Server and enjoy
+
+Notes:
+	•	The server is made to run headless, no need to keep it hooked up to a display. However, the image provided includes drivers for the TFT touch screen used on the ScARA Panels, so it's there just in case
+	•	Make sure to give the server a static IP address through your router
+
+*~~*
+
+Hannah A. Patellis
+hannahap.com
+go.hannahap.com/scara
+hannahpatellis@outlook.com
+@hannahpatellis
+
+Updated 3 Nov 2016

@@ -1,0 +1,58 @@
+Sapphic Citadel Automated Residency Application (ScARA) Project
+
+*~~*
+
+ScARA is in early early development and does not work 100% yet
+
+*~~*
+
+ScARA Panel is written primarily in Python 3.5 and PyQt5 (Qt framework). The job of the panel is to be mounted on the wall and offer a friendly, modern, easy interface to alter smart devices in the house.
+
+Recommended equipment for each panel:
+	•	Raspberry Pi Model 3
+	•	16GB microSD card
+	•	3.5" LCD TFT touch screen display for Raspberry Pi + acrylic case (https://www.aliexpress.com/item/2015-New-Original-3-5-LCD-TFT-Touch-Screen-Display-for-Raspberry-Pi-2-Model-B/32443391725.html)
+	•	Power cord/supply for the Pi
+
+Install and setup:
+	•	Copy the included image file onto a microSD card
+	•	Boot
+	•	Connect to you network
+	•	Assign static IP address via your router
+	•	Change hostname
+	⁃		sudo nano /etc/hosts
+	⁃		sudo nano /etc/hostname
+	•	Change password
+	⁃		passwd
+	•	Make UI configurations
+	⁃		Remove task bar icons that aren't needed
+	⁃		Set the task bar to under windows
+	⁃		Set wallpaper (if so desired)
+	⁃		Remove trash can icon
+	•	Install required packages
+	⁃		sudo apt-get install python3 python3-pyqt5
+	⁃		sudo pip3 install websocket-client
+	•	SFTP to your Pi and upload the scara_panel folder to the home directory (so that you have /home/pi/scara_panel)
+	•	Place ScARA Panel.desktop in the correct places for Application menu
+	⁃		sudo cp "/home/pi/scara_panel/ScARA Panel.desktop" "/usr/share/applications/ScARA Panel.desktop"
+	•	Place an icon to ScARA Panel in the task bar
+	•	Copy fonts into ~/Fonts
+	•	Copy fonts to correct directory
+	⁃		sudo cp ~/Fonts/* /usr/local/share/fonts
+	•	Rebuild font cache
+	⁃		fc-cache -fv
+	•	Run ScARA Panel and enjoy
+
+Notes:
+	•	You will probably want to assign static IPs for each panel in addition to the server through your router
+	•	Do not do a system-wide apt-get upgrade because it will break the driver for the LCD display
+
+*~~*
+
+Hannah A. Patellis
+hannahap.com
+go.hannahap.com/scara
+hannahpatellis@outlook.com
+@hannahpatellis
+
+Updated 3 Nov 2016

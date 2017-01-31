@@ -1,0 +1,38 @@
+<!-- Enter your ScARA Server address to test web socket activity with it
+Written by Hannah A. Patellis - hannahap.com - @hannahpatellis -->
+
+<html>
+    <head>
+        <title>WebSocket Test</title>
+        <script>
+            function init() { 
+	        // This is your ScARA Server
+	        var scaraserverip = "ws://10.10.10.53:8080";
+	        
+	        document.getElementById("ip").innerHTML += "<p><center>Connecting to: " + scaraserverip + "</center></p>";
+            websocket = new WebSocket(scaraserverip, "echo-protocol");
+            
+            websocket.onopen = function() { document.getElementById("output").innerHTML += "<p>> CONNECTED</p>"; };
+            
+            websocket.onmessage = function(evt) { document.getElementById("output").innerHTML += "<p style='color: blue;'>> RESPONSE: " + evt.data + "</p>"; };
+            
+            websocket.onerror = function(evt) { document.getElementById("output").innerHTML += "<p style='color: red;'>> ERROR: " + evt.data + "</p>"; };
+            }
+            
+            function sendMessage(message) {
+            document.getElementById("output").innerHTML += "<p>> SENT: " + message + "</p>";
+            
+            websocket.send(message);
+            }
+            
+            window.addEventListener("load", init, false);
+        </script>
+    </head>
+    <body>
+	    <center><p>Test your ScARA Server's websocket connection using this tool</p></center>
+	    <center><p>Make sure to edit this page with YOUR ScARA Server's IP address</p></center>
+	    <div id="ip"></div>
+        <input onkeypress="if(this.value) {if (window.event.keyCode == 13) { sendMessage(this.value); this.value = null; }}"/>
+        <div id="output"></div>
+    </body>
+</html>

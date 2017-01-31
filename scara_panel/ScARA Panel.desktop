@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=ScARA Panel
+Exec=python3 /home/pi/scara_panel/home.py
+Terminal=true
+Icon=/home/pi/scara_panel/static/scara_icon.png

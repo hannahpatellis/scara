@@ -1,0 +1,25 @@
+Sapphic Citadel Automated Residency Application (ScARA) Project
+
+ScARA is in early early development and does not work 100% yet
+
+*~~*
+
+ScARA Extras are various scripts I've written to help ScARA work more smoothly and to help automate additional functions in the house.
+
+*~~*
+
+updateDNS.py: updateDNS.py goes and grabs your public IP address and then makes an HTTP request to Digital Ocean to update a DNS record. You can use Digital Ocean or code in whatever request needs to be made to your DNS server. Run this as a cron job on the Server
+
+checkPanel.sh: checkPanel.sh checks to make sure the ScARA Panel application is running and if it has crashed, restarts the Panel application. This is a shell script. Run this as a cron job on each Panel
+
+checkServer.sh: checkServer.sh checks to make sure the ScARA Server application is running and if it has crashed, restarts the Server application. This is a shell script. Run this as a cron job on the Server
+
+*~~*
+
+Hannah A. Patellis
+hannahap.com
+go.hannahap.com/scara
+hannahpatellis@outlook.com
+@hannahpatellis
+
+Updated 3 Nov 2016

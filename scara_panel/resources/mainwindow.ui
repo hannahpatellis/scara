@@ -1,0 +1,960 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>480</width>
+    <height>320</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="font">
+   <font>
+    <family>Helvetica Neue</family>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>ScARA Panel</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">color:#FFF;
+background:none;</string>
+  </property>
+  <widget class="QWidget" name="master_window">
+   <widget class="QWidget" name="topbar" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>480</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:#1c1c1c;</string>
+    </property>
+    <widget class="QLabel" name="time">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>8</y>
+       <width>321</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>Helvetica Neue</family>
+       <pointsize>20</pointsize>
+       <kerning>true</kerning>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;
+background:none;</string>
+     </property>
+     <property name="text">
+      <string>Good afternoon, it's 3:45PM</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="date">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>28</y>
+       <width>261</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">color:white;
+background:none;</string>
+     </property>
+     <property name="text">
+      <string>Sunday, October 16, 2016</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="micbox" native="true">
+     <property name="geometry">
+      <rect>
+       <x>430</x>
+       <y>0</y>
+       <width>51</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background:#424242;</string>
+     </property>
+     <widget class="QLabel" name="mic">
+      <property name="geometry">
+       <rect>
+        <x>16</x>
+        <y>5</y>
+        <width>21</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>static/mic.png</pixmap>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QTabWidget" name="tabs">
+    <property name="geometry">
+     <rect>
+      <x>-1</x>
+      <y>49</y>
+      <width>482</width>
+      <height>271</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QTabWidget::pane {
+	margin:0px;
+	padding:0px;
+}
+QTabWidget::tab-bar {
+    alignment: center;
+}
+QTabBar::tab {
+	border-top: 2px solid white;
+	border-bottom: 2px solid white;
+	border-right: 2px solid white;
+	padding: 0px;
+	margin-top:0px;
+	margin-left:0px;
+	margin-bottom:0px;
+}
+QTabBar::tab::first {
+	padding: 0px;
+	margin-bottom:0px;
+	margin-left:0px;
+}
+QTabBar::tab::last {
+	border-right:none;
+	padding: 0px;
+	margin-bottom:0px;
+	margin-left:0px;
+}
+QTabBar::tab::selected {
+	background:white;
+}</string>
+    </property>
+    <property name="tabPosition">
+     <enum>QTabWidget::South</enum>
+    </property>
+    <property name="tabShape">
+     <enum>QTabWidget::Triangular</enum>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>79</width>
+      <height>40</height>
+     </size>
+    </property>
+    <property name="elideMode">
+     <enum>Qt::ElideRight</enum>
+    </property>
+    <property name="usesScrollButtons">
+     <bool>false</bool>
+    </property>
+    <property name="documentMode">
+     <bool>false</bool>
+    </property>
+    <property name="tabsClosable">
+     <bool>false</bool>
+    </property>
+    <property name="movable">
+     <bool>false</bool>
+    </property>
+    <property name="tabBarAutoHide">
+     <bool>false</bool>
+    </property>
+    <widget class="QWidget" name="home">
+     <property name="styleSheet">
+      <string notr="true">background:qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgba(0, 113, 188, 255), stop:1 rgba(212, 20, 90, 255));</string>
+     </property>
+     <attribute name="icon">
+      <iconset>
+       <normaloff>static/home-love.png</normaloff>
+       <normalon>static/home-love-alt.png</normalon>static/home-love.png</iconset>
+     </attribute>
+     <attribute name="title">
+      <string/>
+     </attribute>
+     <widget class="QLabel" name="floorplan">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>30</y>
+        <width>371</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>static/floor.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="livingroom_trigger">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>128</y>
+        <width>32</width>
+        <height>33</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>static/touch.png</pixmap>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="bedroom_trigger">
+      <property name="geometry">
+       <rect>
+        <x>164</x>
+        <y>86</y>
+        <width>32</width>
+        <height>33</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>static/touch.png</pixmap>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="office_trigger">
+      <property name="geometry">
+       <rect>
+        <x>219</x>
+        <y>44</y>
+        <width>32</width>
+        <height>33</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>static/touch.png</pixmap>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="middleroom_trigger">
+      <property name="geometry">
+       <rect>
+        <x>286</x>
+        <y>84</y>
+        <width>32</width>
+        <height>33</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>static/touch.png</pixmap>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="kitchen_trigger">
+      <property name="geometry">
+       <rect>
+        <x>364</x>
+        <y>57</y>
+        <width>32</width>
+        <height>33</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>static/touch.png</pixmap>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="bathroom_trigger">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>130</y>
+        <width>32</width>
+        <height>33</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>static/touch.png</pixmap>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="hall_trigger">
+      <property name="geometry">
+       <rect>
+        <x>173</x>
+        <y>155</y>
+        <width>32</width>
+        <height>33</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>static/touch.png</pixmap>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="scenes">
+     <property name="styleSheet">
+      <string notr="true">background:qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgba(0, 113, 188, 255), stop:1 rgba(212, 20, 90, 255));</string>
+     </property>
+     <attribute name="icon">
+      <iconset>
+       <normaloff>static/scenes.png</normaloff>
+       <normalon>static/scenes-alt.png</normalon>static/scenes.png</iconset>
+     </attribute>
+     <attribute name="title">
+      <string/>
+     </attribute>
+     <widget class="QScrollArea" name="scene_selector">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>10</y>
+        <width>221</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;</string>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="scene_selector_widget">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>219</width>
+         <height>199</height>
+        </rect>
+       </property>
+       <property name="things" stdset="0">
+        <string/>
+       </property>
+       <widget class="QLabel" name="scene1">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>20</y>
+          <width>131</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>18</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Scene</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="scene2">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>60</y>
+          <width>131</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <pointsize>18</pointsize>
+         </font>
+        </property>
+        <property name="text">
+         <string>Scene</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="spacer">
+        <property name="geometry">
+         <rect>
+          <x>50</x>
+          <y>60</y>
+          <width>111</width>
+          <height>4</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background:rgba(71, 71, 71, 211);</string>
+        </property>
+        <property name="text">
+         <string/>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="inside_temp_scenes_label">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>80</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>22</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;</string>
+      </property>
+      <property name="text">
+       <string>inside</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="outside_temp_scenes">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>118</y>
+        <width>111</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>39</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;</string>
+      </property>
+      <property name="text">
+       <string>78°F</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="inside_temp_scenes">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>35</y>
+        <width>111</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>39</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;</string>
+      </property>
+      <property name="text">
+       <string>78°F</string>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::PlainText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="outside_temp_scenes_label">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>160</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>22</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;</string>
+      </property>
+      <property name="text">
+       <string>outside</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="temp">
+     <property name="styleSheet">
+      <string notr="true">background:qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgba(0, 113, 188, 255), stop:1 rgba(212, 20, 90, 255));</string>
+     </property>
+     <attribute name="icon">
+      <iconset>
+       <normaloff>static/temp.png</normaloff>
+       <normalon>static/temp-alt.png</normalon>static/temp.png</iconset>
+     </attribute>
+     <attribute name="title">
+      <string/>
+     </attribute>
+     <widget class="QLabel" name="outside_temp_temp">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>118</y>
+        <width>111</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>39</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;</string>
+      </property>
+      <property name="text">
+       <string>78°F</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="inside_temp_temp_label">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>80</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>22</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;</string>
+      </property>
+      <property name="text">
+       <string>inside</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="inside_temp_temp">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>35</y>
+        <width>111</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>39</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;</string>
+      </property>
+      <property name="text">
+       <string>78°F</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="outside_temp_temp_label">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>160</y>
+        <width>71</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>22</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;</string>
+      </property>
+      <property name="text">
+       <string>outside</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="set_temp">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>60</y>
+        <width>100</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;
+border:4px solid #29abe2;</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="lineWidth">
+       <number>4</number>
+      </property>
+      <property name="text">
+       <string>78°F</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QWidget" name="temp_mode" native="true">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>170</y>
+        <width>100</width>
+        <height>10</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:#c1272d;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="arrow_down">
+      <property name="geometry">
+       <rect>
+        <x>230</x>
+        <y>90</y>
+        <width>27</width>
+        <height>36</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>static/down_arrow.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="arrow_up">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>90</y>
+        <width>27</width>
+        <height>36</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>static/up_arrow.png</pixmap>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="sec">
+     <property name="styleSheet">
+      <string notr="true">background:qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgba(0, 113, 188, 255), stop:1 rgba(212, 20, 90, 255));</string>
+     </property>
+     <attribute name="icon">
+      <iconset>
+       <normaloff>static/cam.png</normaloff>
+       <normalon>static/cam-alt.png</normalon>static/cam.png</iconset>
+     </attribute>
+     <attribute name="title">
+      <string/>
+     </attribute>
+     <widget class="QLabel" name="dev">
+      <property name="geometry">
+       <rect>
+        <x>110</x>
+        <y>170</y>
+        <width>261</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;
+color:#FFF;
+</string>
+      </property>
+      <property name="text">
+       <string>This section is still being developed</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="network">
+     <property name="styleSheet">
+      <string notr="true">background:qlineargradient(spread:pad, x1:0, y1:1, x2:1, y2:0, stop:0 rgba(0, 113, 188, 255), stop:1 rgba(212, 20, 90, 255));</string>
+     </property>
+     <attribute name="icon">
+      <iconset>
+       <normaloff>static/network.png</normaloff>
+       <normalon>static/network-alt.png</normalon>static/network.png</iconset>
+     </attribute>
+     <attribute name="title">
+      <string/>
+     </attribute>
+     <widget class="QScrollArea" name="devices">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>60</y>
+        <width>251</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:transparent;
+</string>
+      </property>
+      <property name="widgetResizable">
+       <bool>true</bool>
+      </property>
+      <widget class="QWidget" name="devices_widget">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>249</width>
+         <height>149</height>
+        </rect>
+       </property>
+       <widget class="QLabel" name="device1">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>10</y>
+          <width>241</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Hannah's Laptop (10.10.10.10)</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="device2">
+        <property name="geometry">
+         <rect>
+          <x>10</x>
+          <y>30</y>
+          <width>241</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>Hannah's Laptop (10.10.10.10)</string>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+     <widget class="QLabel" name="hannahstatus">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>80</y>
+        <width>141</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>static/hannah-home.png</pixmap>
+      </property>
+     </widget>
+     <widget class="QLabel" name="devices_label">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>30</y>
+        <width>221</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;
+color:#FFF;</string>
+      </property>
+      <property name="text">
+       <string>Connected devices</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="angelicastatus">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>140</y>
+        <width>141</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background:none;
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>static/angelica-home.png</pixmap>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="background" native="true">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>480</width>
+      <height>320</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background:#000;</string>
+    </property>
+   </widget>
+   <zorder>background</zorder>
+   <zorder>topbar</zorder>
+   <zorder>tabs</zorder>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

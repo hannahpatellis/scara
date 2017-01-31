@@ -1,0 +1,30 @@
+Sapphic Citadel Automated Residency Application (ScARA) Project
+
+*~~*
+
+ScARA is in early early development and does not work 100% yet
+
+*~~*
+
+ScARA Online is written primarily in Javascript (after HTML, CSS, jQuery, and Bootstrap) with some help from PHP. The job of ScARA Online is to get control of your house from anywhere. Everything accessible on the Panels is accessible using ScARA Online, too.
+
+Recommended setup for ScARA Online:
+	•	Set up a web server, I've chosen to use Digital Ocean because it hosts my personal website too. You can opt to host this on the Raspberry Pi ScARA Server but setting up a LAMP stack. Be careful, this may interfere with the ScARA Server application as it sets up a small web server itself. Hosting ScARA Online on the Server has not been tested.
+	•	Set up a subdomain like "home.yourdomain.com" to direct to ScARA Online
+	•	Place the ScARA Online files in your web server directory
+	•	Edit the config.php
+
+Notes:
+	•	You will need to open up your home router to the web to make ScARA Server available to ScARA Online
+	•	Open port 8080 to direct to the ScARA Server
+	⁃		YourPublicIP:8080 --> Your Router --> ScARA Server
+
+*~~*
+
+Hannah A. Patellis
+hannahap.com
+go.hannahap.com/scara
+hannahpatellis@outlook.com
+@hannahpatellis
+
+Updated 3 Nov 2016
