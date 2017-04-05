@@ -1,22 +1,22 @@
-# scara
+# ScARA O.G. (Archived, not in development)
 A central hub for home automation
 
-Sapphic Citadel Automated Residency Application (ScARA) Project
+**Sapphic Citadel Automated Residency Application (ScARA) Project**
 
-Preface: Hi all! My name is Hannah Patellis and bottom line, I'm a huge nerd. Home automation has always been an interest of mine and I really enjoy learning various languages and creating projects so thus ScARA was born. ScARA is a suite of applications that run on Raspberry Pis to be used as wall panels in a "smart house" and control the "smart" aspects of the house. It's a really fancy light switch. That being said, ScARA is a project and one that is in its early stages of development. I wanted to release all the code and guides so other people could build similar systems but please understand this is not something with a super simple GUI setup. You will have to hand code functionality into it to be used with your specific devices. But please enjoy, make suggestions, alter the code to fit your home, et cetera.
+Preface: ScARA came about as part of my own personal hobby/project of using my love for technology to create cool things to enhance my own home. Furniture, wall decor, paint all make up a lovely house. But the things that make your home _your_ home don't have to be limited to things you pick up at Ikea. So as part of my quest to build a beautiful home, I designed ScARA. ScARA is the home base and glue of the 2 bedroom, single story, 1900s Savannah home I live in with my girlfriend and two cats. She's my little creation and digital pal.
 
-*~~*
+---
 
-ScARA is in early early development and does not work 100% yet
+Development of ScARA O.G. has stopped. This repository serves as an archive. ScARA O.G. does work however; although not super well and not with all the intended features.
 
-*~~*
+---
 
 ScARA currently includes support for:
-	•	Security Almond router/smart home hub via websocket API
-	⁃		Get and set Almond scenes
-	⁃		Get Almond modes
-	⁃		Get Almond connected clients
-	•	Raspberry Pi
+	* Security Almond router/smart home hub via websocket API
+		1. Get and set Almond scenes
+		2. Get Almond modes
+		3. Get Almond connected clients
+	* Raspberry Pi
 
 ScARA works with four components. The server, the panels, a website, and "extras". Extras can include other small scripts to help around the house. I've included my extras just for fun.
 
@@ -32,25 +32,22 @@ ScARA Online is written primarily in Javascript (after HTML, CSS, jQuery, and Bo
 
 ScARA can interface with theoretically anything with an API.
 
-*~~*
+---
 
 I've been developing this for my current house and what it offers, but in the future I plan to expand it more for more flexibility and fun.
 
 Future plans:
-	•	Get it to actually work
-	•	Make some videos about it
-	•	Control a Sensi Thermostat via a Wink Hub and Wink's API
-	•	Install a small camera on each Panel and have it record security footage based on Almond "Modes"
-	•	Add on a voice command system based on the Amazon Alexa API
+	* Get it to actually work
+	* Make some videos about it
+	* Control a Sensi Thermostat via a Wink Hub and Wink's API
+	* Install a small camera on each Panel and have it record security footage based on Almond "Modes"
+	* Add on a voice command system based on the Amazon Alexa API
 
-*~~*
+---
 
-If you have suggestions, found bugs, want to help, send me an e-mail! If you want to see this project go further, you can also think about donating: paypal.me/hannahpatellis
+ScARA lives on as ScARA 2 • go.hannahap.com/scara
 
-Hannah A. Patellis
-hannahap.com
-go.hannahap.com/scara
-hannahpatellis@outlook.com
-@hannahpatellis
+Copyright 2017 Hannah Alexandria Patellis
+hannahpatellis@outlook.com • @hannahpatellis
 
-Updated 3 Nov 2016
+`Updated 3 Nov 2016`
